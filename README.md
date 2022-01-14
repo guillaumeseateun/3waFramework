@@ -1,4 +1,4 @@
-"# 3waFramework" Maxime Vilar - Charles Rizzon - Guillaume Seateun 
+# 3waFramework Maxime Vilar - Charles Rizzon - Guillaume Seateun 
 
 ## Contexte
 Nous avons du créer notre propre framework capable d'afficher une page avec des routes.
