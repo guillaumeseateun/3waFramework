@@ -48,4 +48,9 @@ Commande à utiliser ain de démarrer le serveur pour utiliser le framework
 ```php
 php -S localhost:8000 -t public/
 ```
-
+## installation 
+## initialisation
+## routing
+## templating
+## modeles
+## exemple de controller
