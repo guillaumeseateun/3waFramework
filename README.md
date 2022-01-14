@@ -9,10 +9,10 @@ Nous avons du créer notre propre framework capable d'afficher une page avec des
 
 ## Fonctionnement
 Le framework s'utilise de la façon suivante :
-    - Un point d'entrée sur le fichier index.php défini sur le .htaccess qui va se charger de recevoir toutes les requêtes. C'est lui qui va instancier l'application dans lequel est inclus le fichier app.php qui est le bootstrap de l'application.
-    - Un Service Container qui est contenu dans le Dispatcher, qui va gérer la demande du client et lui fournir la réponse.
-    - La méthode run() du Dispatcher va invoquer le router et en fonction de la route, instancier la bonne méthode dans le bon contrôleur pour répondre à la requête.
-    - Du composant Twig qui va se charger de gérer les vues dans la réponse au client qui sera préparé dans le Service Container.
+- Un point d'entrée sur le fichier index.php défini sur le .htaccess qui va se charger de recevoir toutes les requêtes. C'est lui qui va instancier l'application dans lequel est inclus le fichier app.php qui est le bootstrap de l'application.
+- Un Service Container qui est contenu dans le Dispatcher, qui va gérer la demande du client et lui fournir la réponse.
+- La méthode run() du Dispatcher va invoquer le router et en fonction de la route, instancier la bonne méthode dans le bon contrôleur pour répondre à la requête.
+- Du composant Twig qui va se charger de gérer les vues dans la réponse au client qui sera préparé dans le Service Container.
 
 ## Route
 
