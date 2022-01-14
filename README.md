@@ -34,14 +34,14 @@ Librairies requises :
 
 composer.json 
 ```json
-...
+
 "autoload": {
         "psr-4": {
             "Framework\\": "src/",
             "App\\": "app/"
         }
     }
-...
+
 ```
 
 Commande à utiliser ain de démarrer le serveur pour utiliser le framework 
