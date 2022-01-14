@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Framework;
 
 class Dispatcher
 {
@@ -23,13 +23,14 @@ class Dispatcher
 
     public function run()
     {
+
         if (is_null($this->router))
             throw new \RuntimeException('no route');
+
 
         try {
 
             $route = $this->router->getRoute($this->request->getUri(), $this->request->getVerb());
-
             if ($controller = $route->getController()) $controller = $this->makeController($controller);
 
             $this->params = ($route->getParams()) ? $route->getParams() : [];
@@ -38,8 +39,7 @@ class Dispatcher
 
             $this->send();
         } catch (\RuntimeException $e) {
-
-            $controller = $this->makeController('\\Controllers\\NotFoundController');
+            $controller = $this->makeController('App\\Controllers\\NotFoundController');
             $this->content = $this->call($controller, 'index');
 
             $this->send('404 Not Found');

@@ -2,12 +2,14 @@
     "name": "doggu/framework",
     "autoload": {
         "psr-4": {
-            "App\\": "src/"
+            "Framework\\": "src/",
+            "App\\": "app/"
         }
     },
     "require": {
         "twig/twig": "^3.3",
         "symfony/dotenv": "^6.0",
-        "symfony/yaml": "^6.0"
+        "symfony/yaml": "^6.0",
+        "twbs/bootstrap": "^5.1"
     }
 }

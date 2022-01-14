@@ -55,6 +55,15 @@
             'reference' => 'ed602f38b8636a2ea21af760d2578f3d2f92fc60',
             'dev_requirement' => false,
         ),
+        'twbs/bootstrap' => array(
+            'pretty_version' => 'v5.1.3',
+            'version' => '5.1.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twbs/bootstrap',
+            'aliases' => array(),
+            'reference' => '1a6fdfae6be09b09eaced8f0e442ca6f7680a61e',
+            'dev_requirement' => false,
+        ),
         'twig/twig' => array(
             'pretty_version' => 'v3.3.7',
             'version' => '3.3.7.0',
@@ -63,6 +72,12 @@
             'aliases' => array(),
             'reference' => '8f168c6ffa3ce76d1786b3cd52275424a3fc675b',
             'dev_requirement' => false,
+        ),
+        'twitter/bootstrap' => array(
+            'dev_requirement' => false,
+            'replaced' => array(
+                0 => 'v5.1.3',
+            ),
         ),
     ),
 );

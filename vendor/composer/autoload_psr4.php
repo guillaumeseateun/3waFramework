@@ -11,5 +11,6 @@ return array(
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
     'Symfony\\Component\\Yaml\\' => array($vendorDir . '/symfony/yaml'),
     'Symfony\\Component\\Dotenv\\' => array($vendorDir . '/symfony/dotenv'),
-    'App\\' => array($baseDir . '/src'),
+    'Framework\\' => array($baseDir . '/src'),
+    'App\\' => array($baseDir . '/app'),
 );

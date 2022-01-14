@@ -1,8 +1,6 @@
 <?php
 
-namespace Controllers;
-
-use App\Controller;
+namespace App\Controllers;
 
 class NotFoundController extends BaseController
 {

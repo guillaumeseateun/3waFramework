@@ -1,33 +1,36 @@
 <?php
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '\vendor\autoload.php';
 
-use App\App;
-use App\Container;
-use App\Dispatcher;
-use App\Request;
-use App\Router\Route;
-use App\Router\Router;
+use Framework\App;
+use Framework\Container;
+use Framework\Dispatcher;
+use Framework\Request;
+use Framework\Router\Route;
+use Framework\Router\Router;
 use Symfony\Component\Dotenv\Dotenv;
 use Symfony\Component\Yaml\Yaml;
 
 
+
 // Permet de faire fonctionner .env
+
 (new Dotenv())->load(__DIR__ . '\\.env');
 
-define('VIEW_PATH', __DIR__ . '/resources/views');
-define('ROUTES_PATH', __DIR__ . '/config');
-define('WEBSITE', 'localhost/public');
 
-function dd($v)
-{
-    var_dump($v);
-    die;
-}
+// Définition des routes
+
+define('ROUTES_PATH', __DIR__ . '\config');
+
+
+// Définition du container
 
 $container = new Container;
 
-$container['routes'] = Yaml::parse(ROUTES_PATH . '/routes.yaml');
+
+// Routes
+
+$container['routes'] = Yaml::parseFile(ROUTES_PATH . '\routes.yaml');
 
 $container['router'] = function ($c) {
     $router = new Router;
@@ -38,21 +41,16 @@ $container['router'] = function ($c) {
     return $router;
 };
 
-$container['viewPath'] = VIEW_PATH;
 
-$container['twig'] = $container->asShared(function ($c) {
-    $loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '\templates');
-    return new \Twig\Environment($loader, [
-        'index' => 'Hello {{ name }}!',
-    ]);
-});
+// Twig
 
-// $container['view'] = $container->asShared(function ($c) {
-//     return new View($c['viewPath'], $c['cachePath'], $c['engine']);
-// });
+$loader = new \Twig\Loader\FilesystemLoader(__DIR__ . '\templates');
+$container['twig'] = new \Twig\Environment($loader, [
+    'cache' => false,
+]);
+
 
 
 App::set($container);
-
 
 $dispatcher = new Dispatcher(new Request);

@@ -1,14 +1,11 @@
 <?php
 
-namespace Controllers;
+namespace App\Controllers;
 
-use App\Controller;
-
-class HomeController extends Controller
+class HomeController extends BaseController
 {
     public function index()
     {
-        echo 'test';
-        // $this->view->setRender('layouts.partials.footer', []);
+        return $this->twig->render('home/home.html.twig');
     }
 }

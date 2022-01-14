@@ -23,6 +23,10 @@ class ComposerStaticInit5df643fbcb3123a6315cf215674e2ff5
             'Symfony\\Component\\Yaml\\' => 23,
             'Symfony\\Component\\Dotenv\\' => 25,
         ),
+        'F' => 
+        array (
+            'Framework\\' => 10,
+        ),
         'A' => 
         array (
             'App\\' => 4,
@@ -50,9 +54,13 @@ class ComposerStaticInit5df643fbcb3123a6315cf215674e2ff5
         array (
             0 => __DIR__ . '/..' . '/symfony/dotenv',
         ),
-        'App\\' => 
+        'Framework\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
+        ),
+        'App\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/app',
         ),
     );
 

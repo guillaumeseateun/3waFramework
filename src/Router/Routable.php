@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Router;
+namespace Framework\Router;
 
 interface Routable
 {

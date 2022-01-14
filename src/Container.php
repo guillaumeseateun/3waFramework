@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace Framework;
 
 use ArrayAccess;
 

@@ -1,3 +1,3 @@
 HomeController_index:
     pattern:   \/
-    connect:  Controllers\HomeController:index
+    connect:  App\Controllers\HomeController:index

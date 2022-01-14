@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Router;
-
+namespace Framework\Router;
 
 class Route implements Routable
 {

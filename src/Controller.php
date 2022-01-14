@@ -1,8 +1,7 @@
 <?php
 
-namespace App;
+namespace Framework;
 
-use App\App;
 use PDO;
 use Symfony\Component\Dotenv\Dotenv;
 
@@ -13,15 +12,14 @@ abstract class Controller
     protected $container = null;
     protected $mailer = null;
     protected $message = null;
+    protected $twig = null;
 
     public function __construct()
     {
         $this->container = App::get();
 
-        if (isset($this->container['view']))
-            $this->view = $this->container['view'];
-
-        $this->setConnect();
+        if (isset($this->container['twig']))
+            $this->twig = $this->container['twig'];
 
         $this->run();
     }
@@ -33,21 +31,7 @@ abstract class Controller
         }
 
         if (method_exists($this, 'init')) {
-            //$this->init();
-        }
-    }
-
-    private function setConnect()
-    {
-        $database = $this->container['connection'];
-
-        if ($database['driver'] == 'mysql') {
-            $dsn = "mysql:host={$database['host']};dbname={$database['database']};charset={$database['charset']}";
-            $this->pdo = new PDO($dsn, $database['username'], $database['password']);
-        }
-
-        if ($database['driver'] == 'sqlite') {
-            $this->pdo = new PDO($database['database']);
+            $this->init();
         }
     }
 }
