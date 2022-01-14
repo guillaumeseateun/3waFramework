@@ -1,0 +1,3 @@
+HomeController_index:
+    pattern:   \/
+    connect:  Controllers\HomeController:index
